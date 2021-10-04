@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
-const settings = require('./settings.json')
+//const settings = require('./settings.json')
 const fs = require('fs')
 require('dotenv').config()
 client.commands = new Discord.Collection()
@@ -14,7 +14,7 @@ for (const file of commandFiles) {
   client.commands.set(command.name, command)
 }
 
-var prefix = settings.prefix
+var prefix = process.env.PREFIX
 
 client.on('ready', () => {
   console.log(`XYZ Calibrated! => ${client.user.tag}!`)
@@ -54,4 +54,4 @@ client.on('message', (message) => {
   }
 })
 
-client.login(settings.token)
+client.login(process.env.TOKEN)
