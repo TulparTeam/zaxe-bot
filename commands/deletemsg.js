@@ -3,15 +3,19 @@ const Discord = require('discord.js')
 module.exports = {
   name: 'deletemsg',
   description: 'this is deletes given number times messages, command.',
-  execute(message, args) {
+  async execute(message, args) {
+    let user = message.author.id
+    console.log(user)
     var msg = message.toString()
     var times = msg.substring(msg.length - 2)
     console.log(msg, times, message.toString().length)
     if (message.toString().length > 15 || times == 0) {
       message
-        .reply('\n**Hatalı kullanım.** Yardım için; Zhelp')
+        .reply(`\n**Hatalı kullanım.** Yardım için; Zhelp`)
         .then((message) => {
-          message.delete({timeout: 7000})
+          setTimeout(() => {
+            message.delete()
+          }, 5000)
         })
         .catch()
     } else {
@@ -26,11 +30,12 @@ module.exports = {
       if (helper != 1) {
         message
           .reply(
-            times +
-              ' Geçersiz bir değer. lütfen 0-100 arasında bir miktar girin.'
+            `${times} Geçersiz bir değer. lütfen 0-100 arasında bir miktar girin.`
           )
           .then((message) => {
-            message.delete({timeout: 2000})
+            setTimeout(() => {
+              message.delete()
+            }, 5000)
           })
           .catch()
       } else {
@@ -40,10 +45,12 @@ module.exports = {
           message.channel.bulkDelete(fetched)
         }
         clear()
-        message
-          .reply(times + ' Adet mesaj silindi.')
-          .then((message) => {
-            message.delete({timeout: 2000})
+        message.channel
+          .send(`<@${user}>,  ${times} adet mesaj silindi.`)
+          .then(async (message) => {
+            setTimeout(async () => {
+              await message.delete()
+            }, 5000)
           })
           .catch()
       }
