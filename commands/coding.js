@@ -6,7 +6,7 @@ module.exports = {
 
   execute(message, args) {
     fetch(
-      'https://api.giphy.com/v1/gifs/search?api_key=hGRD0U2gKuXmSUkp4iTGwjx3VrRv4tWm&q=coding'
+      `https://api.giphy.com/v1/gifs/search?api_key=${process.env.GIPHY_APIKEY}&q=coding`
     )
       .then((res) => res.json())
       .then((data) => {
