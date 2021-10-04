@@ -52,8 +52,6 @@ client.on('message', (message) => {
     case 'updatelog':
       client.commands.get('updatelog').execute(message, args)
       break
-    default:
-      break
   }
 })
 
