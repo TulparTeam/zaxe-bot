@@ -1,12 +1,12 @@
 {
-  "name": "jkhelper",
+  "name": "zaxe_bot",
   "version": "1.0.0",
   "description": "",
   "main": "bot.js",
   "scripts": {
     "test": "node bot.js"
   },
-  "author": "JAEGER SOFTWARE",
+  "author": "JAEGER",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^12.5.1",
