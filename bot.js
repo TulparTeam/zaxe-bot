@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 const client = new Discord.Client()
 const settings = require('./settings.json')
 const fs = require('fs')
-
+require('dotenv').config()
 client.commands = new Discord.Collection()
 
 const commandFiles = fs
