@@ -14,21 +14,12 @@ for (const file of commandFiles) {
   client.commands.set(command.name, command)
 }
 
-const roleFiles = fs
-  .readdirSync('./roles/')
-  .filter((file) => file.endsWith('.js'))
-for (const file of roleFiles) {
-  const command = require(`./roles/${file}`)
-
-  client.commands.set(command.name, command)
-}
-
 var prefix = settings.prefix
 
 client.on('ready', () => {
   console.log(`XYZ Calibrated! => ${client.user.tag}!`)
   client.user.setActivity({
-    name: 'Zhelp | Zrandomprint',
+    name: 'Zhelp | Zrandomprint | Zcoding',
     type: 'PLAYING',
     status: 'idle'
   })
@@ -54,6 +45,9 @@ client.on('message', (message) => {
       break
     case 'randomprint':
       client.commands.get('randomprint').execute(message, args)
+      break
+    case 'coding':
+      client.commands.get('coding').execute(message, args)
       break
     default:
       break
