@@ -55,4 +55,12 @@ client.on('messageCreate', async (message) => {
   console.log(command)
 })
 
+client.on('error', (error) => {
+  console.warn(error)
+})
+
+process.on('error', (error) => {
+  console.warn(error)
+})
+
 client.login(process.env.TOKEN)
