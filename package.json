@@ -4,7 +4,9 @@
   "description": "",
   "main": "bot.js",
   "scripts": {
-    "run": "node bot.js"
+    "run": "node bot.js",
+    "start": "node bot.js",
+    "build": "node bot.js"
   },
   "author": "JAEGER",
   "license": "ISC",
