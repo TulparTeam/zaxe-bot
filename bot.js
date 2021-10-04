@@ -19,7 +19,7 @@ var prefix = process.env.PREFIX
 client.on('ready', () => {
   console.log(`XYZ Calibrated! => ${client.user.tag}!`)
   client.user.setActivity({
-    name: 'Zhelp | Zrandomprint | Zcoding',
+    name: 'Zhelp | Zrandomprint',
     type: 'PLAYING',
     status: 'idle'
   })
