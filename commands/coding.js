@@ -16,4 +16,4 @@ module.exports = {
       })
   }
 }
-//https://api.giphy.com/v1/gifs/random?api_key=hGRD0U2gKuXmSUkp4iTGwjx3VrRv4tWm&tag=code&rating=pg-13 GIPHY RANDOM
+//https://api.giphy.com/v1/gifs/random?tag=code&rating=pg-13 GIPHY RANDOM
