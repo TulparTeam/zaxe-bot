@@ -1,5 +1,7 @@
 const Discord = require('discord.js')
-const client = new Discord.Client({intents: []})
+const client = new Discord.Client({
+  intents: ['GUILDS', 'GUILD_MEMBERS', 'GUILD_MESSAGES', 'DIRECT_MESSAGES']
+})
 const fs = require('fs')
 require('dotenv').config()
 client.commands = new Discord.Collection()
@@ -24,11 +26,9 @@ client.on('ready', () => {
   })
 })
 
-client.on('message', (message) => {
+client.on('messageCreate', async (message) => {
   const args = message.content.slice(prefix.length).split(/ +/)
-  const command = args.shift().toLowerCase()
-  console.log(command)
-
+  const command = args[0].toLowerCase()
   switch (command) {
     case 'website':
       client.commands.get('website').execute(message, args)
@@ -52,6 +52,7 @@ client.on('message', (message) => {
       client.commands.get('updatelog').execute(message, args)
       break
   }
+  console.log(command)
 })
 
 client.login(process.env.TOKEN)
