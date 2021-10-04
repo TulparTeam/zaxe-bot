@@ -26,12 +26,12 @@ for (const file of roleFiles) {
 var prefix = settings.prefix
 
 client.on('ready', () => {
-  console.log(`onReady Works > ${client.user.tag}!`)
+  console.log(`XYZ Calibrated! => ${client.user.tag}!`)
   client.user.setActivity({
-    name: 'Printing Something..',
-    type: 'PLAYING',
-    status: 'idle'
+    name: 'zaxe..',
+    type: 'WATCHING'
   })
+  client.user.setStatus({status: 'idle'})
 })
 
 client.on('message', (message) => {
