@@ -5,7 +5,7 @@ module.exports = {
   description: 'This commands send update log to #update-logs channel.',
   execute(message, args) {
     if (message.member.roles.cache.has('893439201687764992')) {
-      message.channel.send('True!')
+      console.log(message)
     } else {
       message.channel.send('False!')
     }
