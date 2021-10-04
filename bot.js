@@ -48,6 +48,8 @@ client.on('message', (message) => {
     client.commands.get('help').execute(message, args)
   } else if (command == 'deletemsg') {
     client.commands.get('deletemsg').execute(message, args)
+  } else if (command == 'randomprint') {
+    client.commands.get('randomprint').execute(message, args)
   }
 })
 
