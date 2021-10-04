@@ -7,7 +7,7 @@ module.exports = {
     if (message.member.roles.cache.has('893439201687764992')) {
       console.log(message)
     } else {
-      message.channel.send('False')
+      message.channel.send('False!')
     }
   }
 }
