@@ -38,18 +38,25 @@ client.on('message', (message) => {
   const args = message.content.slice(prefix.length).split(/ +/)
   const command = args.shift().toLowerCase()
   console.log(command)
-  if (command === 'ping') {
-    client.commands.get('ping').execute(message, args)
-  } else if (command == 'website') {
-    client.commands.get('website').execute(message, args)
-  } else if (command == 'ban') {
-    client.commands.get('ban').execute(message, args)
-  } else if (command == 'help') {
-    client.commands.get('help').execute(message, args)
-  } else if (command == 'deletemsg') {
-    client.commands.get('deletemsg').execute(message, args)
-  } else if (command == 'randomprint') {
-    client.commands.get('randomprint').execute(message, args)
+
+  switch (command) {
+    case 'website':
+      client.commands.get('website').execute(message, args)
+      break
+    case 'ban':
+      client.commands.get('ban').execute(message, args)
+      break
+    case 'help':
+      client.commands.get('help').execute(message, args)
+      break
+    case 'deletemsg':
+      client.commands.get('deletemsg').execute(message, args)
+      break
+    case 'randomprint':
+      client.commands.get('randomprint').execute(message, args)
+      break
+    default:
+      break
   }
 })
 
