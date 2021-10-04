@@ -44,11 +44,45 @@ module.exports = {
       {
         name: 'Spiral Vase',
         url: 'https://www.thingiverse.com/thing:570288'
+      },
+      {
+        name: 'Spiral Cube',
+        url: 'https://www.thingiverse.com/thing:2251743'
+      },
+      {
+        name: 'Fidget Star',
+        url: 'https://www.thingiverse.com/thing:4887861'
+      },
+      {
+        name: 'Penholder',
+        url: 'https://www.thingiverse.com/thing:271353'
+      },
+      {
+        name: 'Lattice Cube',
+        url: 'https://www.thingiverse.com/thing:2522147'
+      },
+      {
+        name: 'Desk Ornaments',
+        url: 'https://www.thingiverse.com/thing:75045'
+      },
+      {
+        name: 'Air Stand 2.0',
+        url: 'https://www.thingiverse.com/thing:269844'
+      },
+      {
+        name: 'Dial Caliper',
+        url: 'https://www.thingiverse.com/thing:831597'
       }
     ]
 
+    const emojiList = ['tada', 'confetti_ball', 'sparkles', 'piñata']
+
     let randomizer = Math.floor(Math.random() * prints.length)
+    let emojiRandomizer = Math.floor(Math.random() * emojiList.length)
     let randomPrint = prints[randomizer]
-    message.channel.send(`**${randomPrint.name}**\n${randomPrint.url}`)
+    let randomEmoji = emojiList[emojiRandomizer]
+    message.channel.send(
+      `**${randomPrint.name}** :${randomEmoji}:\n${randomPrint.url}`
+    )
   }
 }
