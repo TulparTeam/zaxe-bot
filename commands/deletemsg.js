@@ -7,7 +7,7 @@ module.exports = {
     var msg = message.toString()
     var times = msg.substring(msg.length - 2)
     console.log(msg, times, message.toString().length)
-    if (message.toString().length > 14 || times == 0) {
+    if (message.toString().length > 15 || times == 0) {
       message
         .reply('\n**Hatalı kullanım.** Yardım için; Zhelp')
         .then((message) => {
