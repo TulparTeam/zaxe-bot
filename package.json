@@ -4,16 +4,17 @@
   "engines": {
     "node": "14.16.1"
   },
-  "description": "",
-  "main": "bot.js",
+  "description": "Zaxe 3D Discord Bot",
+  "main": "index.js",
   "scripts": {
-    "start": "node bot.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ."
   },
   "author": "JAEGER",
   "license": "ISC",
   "dependencies": {
     "cross-fetch": "^3.1.4",
-    "discord.js": "^12.5.1",
+    "discord.js": "^13.1.0",
     "dotenv": "^10.0.0",
     "image-search-google": "^1.3.0"
   }
