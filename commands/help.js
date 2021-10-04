@@ -1,12 +1,12 @@
 const Discord = require('discord.js')
+const {MessageEmbed} = require('discord.js')
 
 module.exports = {
   name: 'help',
   description: 'this is shows commands , command.',
   execute(message, args) {
-    const embed = new Discord.MessageEmbed()
+    const embed = new MessageEmbed()
       .setColor('#009ade')
-
       .addField('\u200B', '\u200B', false)
       .setAuthor(
         'Zaxe 3D Printing Technologies',
@@ -43,10 +43,9 @@ module.exports = {
       )
       .setTimestamp()
       .setFooter(
-        "Let's print something!",
-        'https://zaxe.com/wp-content/uploads/2021/08/cropped-cropped-xdesktop_icon.png'
+        `Let's print something!`,
+        `https://zaxe.com/wp-content/uploads/2021/08/cropped-cropped-xdesktop_icon.png`
       )
-
-    message.reply(embed)
+    message.channel.send({embeds: [embed]})
   }
 }
