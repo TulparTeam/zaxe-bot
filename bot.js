@@ -28,10 +28,10 @@ var prefix = settings.prefix
 client.on('ready', () => {
   console.log(`XYZ Calibrated! => ${client.user.tag}!`)
   client.user.setActivity({
-    name: 'zaxe..',
-    type: 'WATCHING'
+    name: 'Zhelp | Zrandomprint',
+    type: 'PLAYING',
+    status: 'idle'
   })
-  client.user.setStatus({status: 'idle'})
 })
 
 client.on('message', (message) => {
