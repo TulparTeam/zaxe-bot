@@ -1,7 +1,7 @@
 module.exports = {
   name: 'randomprint',
   description: 'This commands random prints.',
-  execute(message, args) {
+  async execute(message, args) {
     const prints = [
       {
         name: 'Half Mask Skull',
@@ -74,14 +74,16 @@ module.exports = {
         url: 'https://www.thingiverse.com/thing:831597'
       }
     ]
-
     const emojiList = ['tada', 'confetti_ball', 'sparkles', 'piñata']
 
-    let randomizer = Math.floor(Math.random() * prints.length)
-    let emojiRandomizer = Math.floor(Math.random() * emojiList.length)
+    let randomizer
+    let emojiRandomizer
+    randomizer = Math.floor(Math.random() * prints.length)
+    emojiRandomizer = Math.floor(Math.random() * emojiList.length)
     let randomPrint = prints[randomizer]
     let randomEmoji = emojiList[emojiRandomizer]
-    message.channel.send(
+    console.log(randomizer, emojiRandomizer)
+    await message.channel.send(
       `**${randomPrint.name}** :${randomEmoji}:\n${randomPrint.url}`
     )
   }
