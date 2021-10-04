@@ -6,38 +6,39 @@ module.exports = {
   execute(message, args) {
     const embed = new Discord.MessageEmbed()
       .setColor('#009ade')
-      .setTitle('Bot Commands')
+
+      .addField('\u200B', '\u200B', false)
       .setAuthor(
         'Zaxe 3D Printing Technologies',
         'https://zaxe.com/wp-content/uploads/2021/08/cropped-cropped-xdesktop_icon.png',
         'https://zaxe.com'
       )
-      .setDescription('Visit our website\n https://zaxe.com')
       .setThumbnail(
         'https://zaxe.com/wp-content/uploads/2021/10/zaxe-logo-beyaz-1.png'
       )
-      .addField('\u200B', '\u200B', true)
-
+      .addFields({name: 'Visit Our Website', value: 'https://zaxe.com'})
+      .addField('\u200B', '\u200B', false)
       .addFields(
-        {name: 'Main Commands', value: '\u200B'},
-        {name: 'Prefix', value: '"Z"', inline: true},
-        {name: 'Zhelp', value: 'Shows all commands.', inline: true},
-        {name: 'Zwebsite', value: 'Shows website url.', inline: true},
+        {name: 'Usage :\t Z<command>', value: '\u200b', inline: true},
+        {name: '\u200b', value: 'Main Commands'},
+        {name: 'help', value: 'Shows all commands.', inline: false},
+        {name: 'website', value: 'Shows website url.', inline: false},
         {
-          name: 'Zdeletemsg <number>',
+          name: 'deletemsg <count>',
           value: 'Deletes messages given length.',
-          inline: true
+          inline: false
         },
-        {name: 'Fun Commands', value: '\u200B'},
+        {name: '\u200B', value: '\u200B'},
+        {name: '\u200b', value: 'Fun Commands'},
         {
-          name: 'Zrandomprint',
+          name: 'randomprint',
           value: 'Shows a random object for 3D Printing',
-          inline: true
+          inline: false
         },
         {
-          name: 'Zcoding',
+          name: 'coding',
           value: 'Sends random coding gif.',
-          inline: true
+          inline: false
         }
       )
       .setTimestamp()
