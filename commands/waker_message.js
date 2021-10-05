@@ -1,5 +1,3 @@
-const {Console} = require('console')
-const {channel} = require('diagnostics_channel')
 const Discord = require('discord.js')
 
 module.exports = {
@@ -12,12 +10,19 @@ module.exports = {
     theChannel.send(`I'm awake.`).then((msg) => {
       let messageID = msg.id
       console.log('\n\n\n[ RUN ] > Bot Waking Up.')
-      theChannel.messages.fetch(messageID).then((olderMessage) => {
-        setTimeout(() => {
-          olderMessage.delete()
-          console.log('\n\n\n[ RUN ] > Bot Awake.')
-        }, 2000)
-      })
+      theChannel.messages
+        .fetch(messageID)
+        .then((olderMessage) => {
+          setTimeout(() => {
+            olderMessage.delete()
+            console.log('\n\n\n[ RUN ] > Bot Awake.')
+          }, 2000)
+        })
+        .catch((err) => {
+          console.log(
+            `\n\n\n[ ERROR ] > Bot Waker\n Description : ${err}\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\n`
+          )
+        })
     })
   }
 }

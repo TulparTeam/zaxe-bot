@@ -46,10 +46,17 @@ module.exports = {
         `Let's print something!`,
         `https://zaxe.com/wp-content/uploads/2021/08/cropped-cropped-xdesktop_icon.png`
       )
-    message.channel.send({embeds: [embed]}).then(() => {
-      console.log(
-        `\n\n\n[ RUN ] > Help \nUsername : ${message.author.username}\nUser ID : ${message.author.id}`
-      )
-    })
+    message.channel
+      .send({embeds: [embed]})
+      .then(() => {
+        console.log(
+          `\n\n\n[ RUN ] > Help \nUsername : ${message.author.username}\nUser ID : ${message.author.id}`
+        )
+      })
+      .catch((err) => {
+        console.log(
+          `\n\n\n[ ERROR ] > Help\n Description : ${err}\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\n`
+        )
+      })
   }
 }

@@ -11,11 +11,18 @@ module.exports = {
       .then((res) => res.json())
       .then((data) => {
         let randomizer = parseInt(Math.floor(Math.random() * 45))
-        message.channel.send(data.data[randomizer].url).then(() => {
-          console.log(
-            `\n\n\n[ RUN ] > Send Coding Gif\nGif ID : ${randomizer} \nGif URL : ${data.data[randomizer].url}\nUsername : ${message.author.username}\nUser ID : ${message.author.id}`
-          )
-        })
+        message.channel
+          .send(data.data[randomizer].url)
+          .then(() => {
+            console.log(
+              `\n\n\n[ RUN ] > Send Coding Gif\nGif ID : ${randomizer} \nGif URL : ${data.data[randomizer].url}\nUsername : ${message.author.username}\nUser ID : ${message.author.id}`
+            )
+          })
+          .catch((err) => {
+            console.log(
+              `\n\n\n[ ERROR ] > Send Coding Gif\n Description : ${err}\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\n`
+            )
+          })
       })
   }
 }
