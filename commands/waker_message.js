@@ -4,7 +4,7 @@ const Discord = require('discord.js')
 module.exports = {
   name: 'waker_message',
   description: 'This command is for bot stay awake.',
-  execute(client, args) {
+  execute(client) {
     let channelID = '894864477038710824'
     let theChannel = client.channels.cache.get(channelID)
 
