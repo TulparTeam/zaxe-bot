@@ -89,5 +89,10 @@ module.exports = {
           `\n\n\n[ RUN ] > Send Random Print\nPrint NAME : ${randomPrint.name} \nPrint URL : ${randomPrint.url}\nUsername : ${message.author.username}\nUser ID : ${message.author.id}`
         )
       })
+      .catch((err) => {
+        console.log(
+          `\n\n\n[ ERROR ] > Random Prints\n Description : Name Undefined\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\n`
+        )
+      })
   }
 }
