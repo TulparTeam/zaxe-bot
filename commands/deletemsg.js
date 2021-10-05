@@ -55,7 +55,7 @@ module.exports = {
         .then((msg) => msg.delete())
         .then(() => {
           console.log(
-            `[ RUN ] > Delete Messages\nUsername : ${message.author.name}\nUser ID : ${message.author.id}\nResult : [ SUCCESS ]`
+            `\n\n\n[ RUN ] > Delete Messages\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\nResult : [ SUCCESS ]`
           )
         })
     }, 5000)

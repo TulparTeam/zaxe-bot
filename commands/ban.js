@@ -11,7 +11,7 @@ module.exports = {
     }
 
     console.log(
-      `[ RUN ] > Send Website\nUsername : ${message.author.name}\nUser ID : ${message.author.id}`
+      `\n\n\n[ RUN ] > Send Website\nUsername : ${message.author.username}\nUser ID : ${message.author.id}`
     )
   }
 }

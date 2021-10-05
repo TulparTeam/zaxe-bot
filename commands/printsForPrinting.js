@@ -83,11 +83,12 @@ module.exports = {
     let randomPrint = prints[randomizer]
     let randomEmoji = emojiList[emojiRandomizer]
     console.log(randomizer, emojiRandomizer)
+    console.log(message)
     await message.channel
       .send(`**${randomPrint.name}** :${randomEmoji}:\n${randomPrint.url}`)
       .then(() => {
         console.log(
-          `[ RUN ] > Send Random Print\nPrint NAME : ${randomPrint.name} \nPrint URL : ${randomPrint.name}\nUsername : ${message.author.name}\nUser ID : ${message.author.id}`
+          `\n\n\n[ RUN ] > Send Random Print\nPrint NAME : ${randomPrint.name} \nPrint URL : ${randomPrint.url}\nUsername : ${message.author.username}\nUser ID : ${message.author.id}`
         )
       })
   }

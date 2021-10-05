@@ -48,7 +48,7 @@ module.exports = {
       )
     message.channel.send({embeds: [embed]}).then(() => {
       console.log(
-        `[ RUN ] > Help \nUsername : ${message.author.name}\nUser ID : ${message.author.id}`
+        `\n\n\n[ RUN ] > Help \nUsername : ${message.author.username}\nUser ID : ${message.author.id}`
       )
     })
   }

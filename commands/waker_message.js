@@ -11,11 +11,11 @@ module.exports = {
 
     theChannel.send(`I'm awake.`).then((msg) => {
       let messageID = msg.id
-      Console.log('[ RUN ] > Bot Waking Up.')
+      console.log('\n\n\n[ RUN ] > Bot Waking Up.')
       theChannel.messages.fetch(messageID).then((olderMessage) => {
         setTimeout(() => {
           olderMessage.delete()
-          Console.log('[ RUN ] > Bot Awake.')
+          console.log('\n\n\n[ RUN ] > Bot Awake.')
         }, 2000)
       })
     })
