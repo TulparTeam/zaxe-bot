@@ -13,7 +13,7 @@ module.exports = {
       message.reply(`\n**Hatalı kullanım.** Yardım için; Zhelp`).then((res) => {
         msgID = res.id
         console.log(
-          `\n\n\n[ RUN ] > Delete Messages\nUsername : ${message.authorusername.name}\nUser ID : ${message.author.id}\nResult : [ WRONG SYNTAX ]`
+          `\n\n\n[ RUN ] > Delete Messages\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\nResult : [ WRONG SYNTAX ]`
         )
       })
     } else {
