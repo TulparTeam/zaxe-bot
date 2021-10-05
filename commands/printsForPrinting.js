@@ -82,8 +82,6 @@ module.exports = {
     emojiRandomizer = Math.floor(Math.random() * emojiList.length)
     let randomPrint = prints[randomizer]
     let randomEmoji = emojiList[emojiRandomizer]
-    console.log(randomizer, emojiRandomizer)
-    console.log(message)
     await message.channel
       .send(`**${randomPrint.name}** :${randomEmoji}:\n${randomPrint.url}`)
       .then(() => {

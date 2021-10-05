@@ -9,12 +9,11 @@ module.exports = {
     let msgID
     var msg = message.toString()
     var times = msg.substring(msg.length - 2)
-    console.log(msg, times, message.toString().length)
     if (message.toString().length > 15 || times == 0) {
       message.reply(`\n**Hatalı kullanım.** Yardım için; Zhelp`).then((res) => {
         msgID = res.id
         console.log(
-          `Run > Delete Messages\n Username : ${message.author.name}\n User ID : ${message.author.id}\n Result : [ WRONG SYNTAX ]`
+          `\n\n\n[ RUN ] > Delete Messages\nUsername : ${message.authorusername.name}\nUser ID : ${message.author.id}\nResult : [ WRONG SYNTAX ]`
         )
       })
     } else {
@@ -32,7 +31,7 @@ module.exports = {
           .then((res) => {
             msgID = res.id
             console.log(
-              `Run > Delete Messages\n Username : ${message.author.name}\n User ID : ${message.author.id}\n Result : [ WRONG COUNT ]`
+              `\n\n\n[ RUN ] > Delete Messages\nUsername : ${message.authorusername.name}\nUser ID : ${message.author.id}\nResult : [ WRONG COUNT ]`
             )
           })
       } else {
