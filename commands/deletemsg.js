@@ -1,6 +1,6 @@
 const {channel} = require('diagnostics_channel')
 const Discord = require('discord.js')
-
+const {sendDate} = require('../getDate.js')
 module.exports = {
   name: 'deletemsg',
   description: 'This command is for deleteing messages as given count.',
@@ -22,12 +22,18 @@ module.exports = {
               .then((msg) => msg.delete())
               .then(() => {
                 console.log(
-                  `\n\n\n[ RUN ] > Delete Messages\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\nResult : [ WRONG SYNTAX ]`
+                  `\n\n\n[ RUN ] > Delete Messages\n|\n| Username : ${
+                    message.author.username
+                  }\n| User ID : ${
+                    message.author.id
+                  }\n| Result : [ WRONG SYNTAX ]\n|\n${sendDate()}`
                 )
               })
               .catch((err) => {
                 console.log(
-                  `\n\n\n[ ERROR ] > Delete Messages\n Description : Message Not Found\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\n`
+                  `\n\n\n[ ERROR ] > Delete Messages\n|\n|Description : Message Not Found\n| Username : ${
+                    message.author.username
+                  }\n| User ID : ${message.author.id}\n|\n${sendDate()}`
                 )
               })
           }, 5000)
@@ -54,12 +60,18 @@ module.exports = {
                 .then((msg) => msg.delete())
                 .then(() => {
                   console.log(
-                    `\n\n\n[ RUN ] > Delete Messages\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\nResult : [ WRONG COUNT ]`
+                    `\n\n\n[ RUN ] > Delete Messages\n|\n| Username : ${
+                      message.author.username
+                    }\n| User ID : ${
+                      message.author.id
+                    }\n| Result : [ WRONG COUNT ]\n|\n${sendDate()}`
                   )
                 })
                 .catch((err) => {
                   console.log(
-                    `\n\n\n[ ERROR ] > Delete Messages\n Description : Message Not Found\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\n`
+                    `\n\n\n[ ERROR ] > Delete Messages\n|\n| Description : Message Not Found\n| Username : ${
+                      message.author.username
+                    }\n| User ID : ${message.author.id}\n|\n${sendDate()}`
                   )
                 })
             }, 5000)
@@ -83,12 +95,18 @@ module.exports = {
                 .then((msg) => msg.delete())
                 .then(() => {
                   console.log(
-                    `\n\n\n[ RUN ] > Delete Messages\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\nResult : [ SUCCESS ]`
+                    `\n\n\n[ RUN ] > Delete Messages\n|\n| Username : ${
+                      message.author.username
+                    }\n| User ID : ${
+                      message.author.id
+                    }\n| Result : [ SUCCESS ]\n|\n${sendDate()}`
                   )
                 })
                 .catch((err) => {
                   console.log(
-                    `\n\n\n[ ERROR ] > Delete Messages\n Description : Message Not Found\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\n`
+                    `\n\n\n[ ERROR ] > Delete Messages\n|\n| Description : Message Not Found\n| Username : ${
+                      message.author.username
+                    }\n| User ID : ${message.author.id}\n|\n${sendDate()}`
                   )
                 })
             }, 5000)

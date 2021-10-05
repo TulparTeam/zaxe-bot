@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const {MessageEmbed} = require('discord.js')
-
+const {sendDate} = require('../getDate.js')
 module.exports = {
   name: 'help',
   description: 'This commands shows all commands.',
@@ -50,12 +50,16 @@ module.exports = {
       .send({embeds: [embed]})
       .then(() => {
         console.log(
-          `\n\n\n[ RUN ] > Help \nUsername : ${message.author.username}\nUser ID : ${message.author.id}`
+          `\n\n\n[ RUN ] > Help\n|\n| Username : ${
+            message.author.username
+          }\n| User ID : ${message.author.id}\n|\n${sendDate()}`
         )
       })
       .catch((err) => {
         console.log(
-          `\n\n\n[ ERROR ] > Help\n Description : ${err}\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\n`
+          `\n\n\n[ ERROR ] > Help\n|\n| Description : ${err}\n| Username : ${
+            message.author.username
+          }\n| User ID : ${message.author.id}\n|\n${sendDate()}`
         )
       })
   }

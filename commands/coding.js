@@ -1,5 +1,5 @@
 const fetch = require('cross-fetch')
-
+const {sendDate} = require('../getDate.js')
 module.exports = {
   name: 'coding',
   description: 'This commands is for sendin coding gifs.',
@@ -15,12 +15,18 @@ module.exports = {
           .send(data.data[randomizer].url)
           .then(() => {
             console.log(
-              `\n\n\n[ RUN ] > Send Coding Gif\nGif ID : ${randomizer} \nGif URL : ${data.data[randomizer].url}\nUsername : ${message.author.username}\nUser ID : ${message.author.id}`
+              `\n\n\n[ RUN ] > Send Coding Gif\n|\n| Gif ID : ${randomizer} \n| Gif URL : ${
+                data.data[randomizer].url
+              }\n| Username : ${message.author.username}\n| User ID : ${
+                message.author.id
+              }\n|\n${sendDate()}`
             )
           })
           .catch((err) => {
             console.log(
-              `\n\n\n[ ERROR ] > Send Coding Gif\n Description : ${err}\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\n`
+              `\n\n\n[ ERROR ] > Send Coding Gif\n|\n| Description : ${err}\n| Username : ${
+                message.author.username
+              }\n| User ID : ${message.author.id}\n|\n${sendDate()}`
             )
           })
       })

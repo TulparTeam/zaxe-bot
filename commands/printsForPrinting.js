@@ -1,3 +1,5 @@
+const {sendDate} = require('../getDate.js')
+
 module.exports = {
   name: 'randomprint',
   description: 'This command sends random prints.',
@@ -87,12 +89,18 @@ module.exports = {
         .send(`**${randomPrint.name}** :${randomEmoji}:\n${randomPrint.url}`)
         .then(() => {
           console.log(
-            `\n\n\n[ RUN ] > Send Random Print\nPrint NAME : ${randomPrint.name} \nPrint URL : ${randomPrint.url}\nUsername : ${message.author.username}\nUser ID : ${message.author.id}`
+            `\n\n\n[ RUN ] > Send Random Print\n|\n| Print NAME : ${
+              randomPrint.name
+            } \n| Print URL : ${randomPrint.url}\n| Username : ${
+              message.author.username
+            }\n| User ID : ${message.author.id}\n|\n${sendDate()}`
           )
         })
     } else {
       console.log(
-        `\n\n\n[ ERROR ] > Random Prints\n Description : Name Undefined\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\n`
+        `\n\n\n[ ERROR ] > Random Prints\n|\n| Description : Name Undefined\n| Username : ${
+          message.author.username
+        }\n| User ID : ${message.author.id}\n|\n${sendDate()}`
       )
     }
   }

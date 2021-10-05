@@ -1,3 +1,4 @@
+const {sendDate} = require('../getDate.js')
 module.exports = {
   name: 'ban',
   description: 'This commands is for banning a member.',
@@ -11,7 +12,9 @@ module.exports = {
     }
 
     console.log(
-      `\n\n\n[ RUN ] > Send Website\nUsername : ${message.author.username}\nUser ID : ${message.author.id}`
+      `\n\n\n[ RUN ] > Ban \n|\n| Username : ${
+        message.author.username
+      }\n| User ID : ${message.author.id}\n|\n${sendDate()}`
     )
   }
 }
