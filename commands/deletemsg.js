@@ -10,12 +10,23 @@ module.exports = {
     var msg = message.toString()
     var times = msg.substring(msg.length - 2)
     if (message.toString().length > 15 || times == 0) {
-      message.reply(`\n**Hatalı kullanım.** Yardım için; Zhelp`).then((res) => {
-        msgID = res.id
-        console.log(
-          `\n\n\n[ RUN ] > Delete Messages\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\nResult : [ WRONG SYNTAX ]`
-        )
-      })
+      message
+        .reply(`\n**Hatalı kullanım.** Yardım için; Zhelp`)
+        .then((res) => {
+          msgID = res.id
+        })
+        .then(() => {
+          setTimeout(() => {
+            message.channel.messages
+              .fetch(msgID)
+              .then((msg) => msg.delete())
+              .then(() => {
+                console.log(
+                  `\n\n\n[ RUN ] > Delete Messages\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\nResult : [ WRONG SYNTAX ]`
+                )
+              })
+          }, 5000)
+        })
     } else {
       var helper = 0
       for (var i = 0; i < 100; i++) {
@@ -30,9 +41,18 @@ module.exports = {
           .reply(`Geçersiz bir değer. lütfen 0-100 arasında bir miktar girin.`)
           .then((res) => {
             msgID = res.id
-            console.log(
-              `\n\n\n[ RUN ] > Delete Messages\nUsername : ${message.authorusername.name}\nUser ID : ${message.author.id}\nResult : [ WRONG COUNT ]`
-            )
+          })
+          .then(() => {
+            setTimeout(() => {
+              message.channel.messages
+                .fetch(msgID)
+                .then((msg) => msg.delete())
+                .then(() => {
+                  console.log(
+                    `\n\n\n[ RUN ] > Delete Messages\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\nResult : [ WRONG COUNT ]`
+                  )
+                })
+            }, 5000)
           })
       } else {
         async function clear() {
