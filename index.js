@@ -52,7 +52,6 @@ client.on('messageCreate', async (message) => {
       client.commands.get('updatelog').execute(message, args)
       break
   }
-  console.log(command)
 })
 
 client.on('error', (error) => {
