@@ -46,17 +46,19 @@ module.exports = {
           .then((res) => {
             msgID = res.id
           })
+          .then(() => {
+            setTimeout(() => {
+              message.channel.messages
+                .fetch(msgID)
+                .then((msg) => msg.delete())
+                .then(() => {
+                  console.log(
+                    `\n\n\n[ RUN ] > Delete Messages\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\nResult : [ SUCCESS ]`
+                  )
+                })
+            }, 5000)
+          })
       }
     }
-    setTimeout(() => {
-      message.channel.messages
-        .fetch(msgID)
-        .then((msg) => msg.delete())
-        .then(() => {
-          console.log(
-            `\n\n\n[ RUN ] > Delete Messages\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\nResult : [ SUCCESS ]`
-          )
-        })
-    }, 5000)
   }
 }
