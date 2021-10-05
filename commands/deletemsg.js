@@ -3,7 +3,7 @@ const Discord = require('discord.js')
 
 module.exports = {
   name: 'deletemsg',
-  description: 'this is deletes given number times messages, command.',
+  description: 'This command is for deleteing messages as given count.',
   async execute(message, args) {
     let user = message.author.id
     let msgID
