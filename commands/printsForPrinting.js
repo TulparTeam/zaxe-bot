@@ -82,17 +82,18 @@ module.exports = {
     emojiRandomizer = Math.floor(Math.random() * emojiList.length)
     let randomPrint = prints[randomizer]
     let randomEmoji = emojiList[emojiRandomizer]
-    await message.channel
-      .send(`**${randomPrint.name}** :${randomEmoji}:\n${randomPrint.url}`)
-      .then(() => {
-        console.log(
-          `\n\n\n[ RUN ] > Send Random Print\nPrint NAME : ${randomPrint.name} \nPrint URL : ${randomPrint.url}\nUsername : ${message.author.username}\nUser ID : ${message.author.id}`
-        )
-      })
-      .catch((err) => {
-        console.log(
-          `\n\n\n[ ERROR ] > Random Prints\n Description : Name Undefined\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\n`
-        )
-      })
+    if (randomPrint.name != undefined) {
+      await message.channel
+        .send(`**${randomPrint.name}** :${randomEmoji}:\n${randomPrint.url}`)
+        .then(() => {
+          console.log(
+            `\n\n\n[ RUN ] > Send Random Print\nPrint NAME : ${randomPrint.name} \nPrint URL : ${randomPrint.url}\nUsername : ${message.author.username}\nUser ID : ${message.author.id}`
+          )
+        })
+    } else {
+      console.log(
+        `\n\n\n[ ERROR ] > Random Prints\n Description : Name Undefined\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\n`
+      )
+    }
   }
 }
