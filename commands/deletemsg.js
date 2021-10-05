@@ -25,6 +25,11 @@ module.exports = {
                   `\n\n\n[ RUN ] > Delete Messages\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\nResult : [ WRONG SYNTAX ]`
                 )
               })
+              .catch((err) => {
+                console.log(
+                  `\n\n\n[ ERROR ] > Delete Messages\n Description : Message Not Found\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\n`
+                )
+              })
           }, 5000)
         })
     } else {
@@ -52,6 +57,11 @@ module.exports = {
                     `\n\n\n[ RUN ] > Delete Messages\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\nResult : [ WRONG COUNT ]`
                   )
                 })
+                .catch((err) => {
+                  console.log(
+                    `\n\n\n[ ERROR ] > Delete Messages\n Description : Message Not Found\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\n`
+                  )
+                })
             }, 5000)
           })
       } else {
@@ -74,6 +84,11 @@ module.exports = {
                 .then(() => {
                   console.log(
                     `\n\n\n[ RUN ] > Delete Messages\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\nResult : [ SUCCESS ]`
+                  )
+                })
+                .catch((err) => {
+                  console.log(
+                    `\n\n\n[ ERROR ] > Delete Messages\n Description : Message Not Found\nUsername : ${message.author.username}\nUser ID : ${message.author.id}\n`
                   )
                 })
             }, 5000)
