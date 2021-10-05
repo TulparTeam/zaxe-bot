@@ -54,6 +54,11 @@ client.on('messageCreate', async (message) => {
   }
 })
 
+setInterval(() => {
+  client.commands.get('waker_message').execute(client, args)
+  console.log('Waked up.')
+}, 900000)
+
 client.on('error', (error) => {
   console.warn(error)
 })
