@@ -1,6 +1,6 @@
 module.exports = {
   name: 'randomprint',
-  description: 'This commands random prints.',
+  description: 'This command sends random prints.',
   async execute(message, args) {
     const prints = [
       {
