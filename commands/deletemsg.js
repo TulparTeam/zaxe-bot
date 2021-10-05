@@ -7,13 +7,15 @@ module.exports = {
   async execute(message, args) {
     let user = message.author.id
     let msgID
-    console.log(user)
     var msg = message.toString()
     var times = msg.substring(msg.length - 2)
     console.log(msg, times, message.toString().length)
     if (message.toString().length > 15 || times == 0) {
       message.reply(`\n**Hatalı kullanım.** Yardım için; Zhelp`).then((res) => {
         msgID = res.id
+        console.log(
+          `Run > Delete Messages\n Username : ${message.author.name}\n User ID : ${message.author.id}\n Result : [ WRONG SYNTAX ]`
+        )
       })
     } else {
       var helper = 0
@@ -29,6 +31,9 @@ module.exports = {
           .reply(`Geçersiz bir değer. lütfen 0-100 arasında bir miktar girin.`)
           .then((res) => {
             msgID = res.id
+            console.log(
+              `Run > Delete Messages\n Username : ${message.author.name}\n User ID : ${message.author.id}\n Result : [ WRONG COUNT ]`
+            )
           })
       } else {
         async function clear() {
@@ -45,7 +50,14 @@ module.exports = {
       }
     }
     setTimeout(() => {
-      message.channel.messages.fetch(msgID).then((msg) => msg.delete())
+      message.channel.messages
+        .fetch(msgID)
+        .then((msg) => msg.delete())
+        .then(() => {
+          console.log(
+            `[ RUN ] > Delete Messages\nUsername : ${message.author.name}\nUser ID : ${message.author.id}\nResult : [ SUCCESS ]`
+          )
+        })
     }, 5000)
   }
 }

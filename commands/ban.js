@@ -9,5 +9,9 @@ module.exports = {
         'Görünüşe göre bu komut için gerekli yetkiye sahip değilsin, bu komudu kullanamazsın.'
       )
     }
+
+    console.log(
+      `[ RUN ] > Send Website\nUsername : ${message.author.name}\nUser ID : ${message.author.id}`
+    )
   }
 }

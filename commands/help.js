@@ -46,6 +46,10 @@ module.exports = {
         `Let's print something!`,
         `https://zaxe.com/wp-content/uploads/2021/08/cropped-cropped-xdesktop_icon.png`
       )
-    message.channel.send({embeds: [embed]})
+    message.channel.send({embeds: [embed]}).then(() => {
+      console.log(
+        `[ RUN ] > Help \nUsername : ${message.author.name}\nUser ID : ${message.author.id}`
+      )
+    })
   }
 }
