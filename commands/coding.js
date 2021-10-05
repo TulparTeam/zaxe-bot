@@ -2,7 +2,7 @@ const fetch = require('cross-fetch')
 
 module.exports = {
   name: 'coding',
-  description: 'this code sends coding gifs.',
+  description: 'This commands is for sendin coding gifs.',
 
   execute(message, args) {
     fetch(
