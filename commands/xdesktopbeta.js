@@ -20,7 +20,8 @@ module.exports = {
 
     await message.channel
       .send({
-        content: '+ Upgrade print profiles.\nEnjoy!\nHere is the beta links;',
+        content:
+          '> xDesktop Beta Update\n> Upgrade print profiles.\nEnjoy!\nHere is the beta links;',
         components: [downloadWin, donwloadMac]
       })
       .then(() => {
