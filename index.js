@@ -51,12 +51,15 @@ client.on('messageCreate', async (message) => {
     case 'updatelog':
       client.commands.get('updatelog').execute(message, args)
       break
+    case 'xdesktopbeta':
+      client.commands.get('xdesktopbeta').execute(message, args)
+      break
   }
 })
 
-setInterval(() => {
+/*setInterval(() => {
   client.commands.get('waker_message').execute(client)
-}, 120000)
+}, 120000)*/
 
 client.on('error', (error) => {
   console.warn(error)
